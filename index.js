@@ -35,7 +35,7 @@ app.get('/api/transaksi',(req, res) => {
 
 //add new transaction
 app.post('/api/transaksi',(req, res) => {
-  let data = {id_pengguna: req.body.id_pengguna, va_tujuan: req.body.va_tujuan, id_film: req.body.id_film, jadwal_film: '2019-11-09 00:00:00', kursi_pesanan: req.body.kursi_pesanan, waktu_pembuatan_transaksi: '2019-11-09 00:00:00', status: 'pending'};
+  let data = {id_pengguna: req.body.id_pengguna, va_tujuan: req.body.va_tujuan, id_film: req.body.id_film, jadwal_film: '2019-11-09 00:00:00', kursi_pesanan: req.body.kursi_pesanan, waktu_pembuatan_transaksi: '2019-11-09 00:00:00', status_transaksi: 'pending'};
   let sql = "INSERT INTO transaksi SET ?";
   let query = conn.query(sql, data,(err, results) => {
     if(err) throw err;
@@ -45,7 +45,7 @@ app.post('/api/transaksi',(req, res) => {
 
 //change transaction status
 app.put('/api/transaksi/:id_transaksi',(req, res) => {
-  let sql = "UPDATE transaksi SET status='"+req.body.status+"' WHERE product_id="+req.params.id;
+  let sql = "UPDATE transaksi SET status_transaksi='"+req.body.status+"' WHERE product_id="+req.params.id;
   let query = conn.query(sql, (err, results) => {
     if(err) throw err;
     res.send(JSON.stringify({"status": 200, "error": null, "response": results}));
