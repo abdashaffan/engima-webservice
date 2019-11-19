@@ -31,17 +31,17 @@ app.get("/api/transaksi", (req, res) => {
 //add new transaction
 app.post("/api/transaksi", (req, res) => {
   let data = {
-    id_pengguna: req.body.id_pengguna,
-    va_tujuan: req.body.va_tujuan,
-    id_film: req.body.id_film,
-    jadwal_film: "2019-11-09 00:00:00",
-    kursi_pesanan: req.body.kursi_pesanan,
+    ...req.body, //sama kayak diatas cuman jadwal_film dapet dari req body juga.
     waktu_pembuatan_transaksi: "2019-11-09 00:00:00",
     status_transaksi: "pending"
   };
+
   let sql = "INSERT INTO transaksi SET ?";
   let query = conn.query(sql, data, (err, results) => {
-    if (err) throw err;
+    if (err) {
+      console.log(err);
+      res.send(JSON.stringify({ response: { msg: "Internal server error" } }));
+    }
     res.send(JSON.stringify({ status: 200, error: null, response: results }));
   });
 });
