@@ -31,11 +31,9 @@ app.get("/api/transaksi", (req, res) => {
 //add new transaction
 app.post("/api/transaksi", (req, res) => {
   let data = {
-    ...req.body, //sama kayak diatas cuman jadwal_film dapet dari req body juga.
-    waktu_pembuatan_transaksi: "2019-11-09 00:00:00",
-    status_transaksi: "pending"
+    ...req.body
+    //gak perlu masukin status_transaksi sama waktu_pembuatan_transaksi, udah di default dari DB nya
   };
-
   let sql = "INSERT INTO transaksi SET ?";
   let query = conn.query(sql, data, (err, results) => {
     if (err) {
@@ -53,7 +51,7 @@ app.put("/api/transaksi/:id_transaksi", (req, res) => {
     req.body.status +
     "' WHERE id_transaksi=" +
     req.params.id_transaksi;
-    console.log(sql);
+  console.log(sql);
   let query = conn.query(sql, (err, results) => {
     if (err) throw err;
     res.send(JSON.stringify({ status: 200, error: null, response: results }));
