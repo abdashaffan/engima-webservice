@@ -32,7 +32,7 @@ CREATE TABLE `transaksi` (
   `id_transaksi` int(11) NOT NULL,
   `id_pengguna` int(11) NOT NULL,
   `va_tujuan` char(16) NOT NULL,
-  `id_film` char(16) NOT NULL,
+  `id_film` int(16) NOT NULL,
   `jadwal_film` datetime NOT NULL,
   `kursi_pesanan` int(11) NOT NULL,
   `waktu_pembuatan_transaksi` datetime NOT NULL,
@@ -44,8 +44,8 @@ CREATE TABLE `transaksi` (
 --
 
 INSERT INTO `transaksi` (`id_transaksi`, `id_pengguna`, `va_tujuan`, `id_film`, `jadwal_film`, `kursi_pesanan`, `waktu_pembuatan_transaksi`, `status_transaksi`) VALUES
-(1, 123, '12412415', 'superman', '2019-11-07 00:00:00', 2, '2019-11-07 02:00:00', 'pending'),
-(2, 222, '886767364', 'spiderman', '2019-11-09 00:00:00', 6, '2019-11-16 00:00:00', 'success');
+(1, 123, '12412415', 1, '2019-11-07 00:00:00', 2, '2019-11-07 02:00:00', 'pending'),
+(2, 222, '886767364', 1, '2019-11-09 00:00:00', 6, '2019-11-16 00:00:00', 'success');
 
 --
 -- Indexes for dumped tables

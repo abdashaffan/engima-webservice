@@ -51,8 +51,9 @@ app.put("/api/transaksi/:id_transaksi", (req, res) => {
   let sql =
     "UPDATE transaksi SET status_transaksi='" +
     req.body.status +
-    "' WHERE product_id=" +
-    req.params.id;
+    "' WHERE id_transaksi=" +
+    req.params.id_transaksi;
+    console.log(sql);
   let query = conn.query(sql, (err, results) => {
     if (err) throw err;
     res.send(JSON.stringify({ status: 200, error: null, response: results }));
