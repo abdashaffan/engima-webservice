@@ -26,9 +26,9 @@ test:
     - npm run test
     # ToDo: Add coverage
 
-deployToAWS:
-  only:
-    - master
-  stage: deploy
-  script:
-    - bash deploy/deploy.sh
+# deployToAWS:
+#   only:
+#     - master
+#   stage: deploy
+#   script:
+#     - bash deploy/deploy.sh
