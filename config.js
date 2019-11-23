@@ -2,8 +2,8 @@
 // Di local jalanin "git rm --cached config.js" supaya ke ignore
 const db_config = {
   host: "localhost",
-  user: "abda",
-  password: "abda",
+  user: "root",
+  password: "",
   database: "transaksi_tiket"
 };
 
