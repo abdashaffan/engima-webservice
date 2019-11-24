@@ -35,8 +35,7 @@ deployAws:
     - pwd
     - cd ..
     - pwd
-    # - sudo rm -R ws-transaksi
-    - ssh-keyscan -H gitlab.informatika.org >> ~/.ssh/knows_hosts
+    - sudo rm -R ws-transaksi
     - git clone https://gitlab.informatika.org/if3110-2019-02-k03-04/ws-transaksi.git
     - pwd
     - cd ws-transaksi
