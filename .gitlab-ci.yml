@@ -8,6 +8,7 @@ before_script:
 
 stages:
   - test
+  - delete
   - deploy
 
 # lint and test are two different jobs in the same stage.
@@ -26,6 +27,12 @@ lint:
 #     - npm run test
 #     # ToDo: Add coverage
 
+delete_folder:
+  state: delete
+  script:
+    - sudo rm -f -R ws-transaksi
+  allow_failure: true
+
 deployAws:
   # only:
   #   - master
@@ -33,7 +40,6 @@ deployAws:
   stage: deploy
   script:
     - pwd
-    - sudo rm -f -R ws-transaksi
     - git clone https://gitlab.informatika.org/if3110-2019-02-k03-04/ws-transaksi.git
     - pwd
     - cd ws-transaksi
