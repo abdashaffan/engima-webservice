@@ -42,6 +42,5 @@ deployAws:
     - pwd
     - git clone git@gitlab.informatika.org:if3110-2019-02-k03-04/ws-transaksi.git
     - pwd
-    - cd ws-transaksi
     - pm2 kill
     - pm2 start index.js
