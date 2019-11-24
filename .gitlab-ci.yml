@@ -32,8 +32,9 @@ deployAws:
   #   - develop
   stage: deploy
   script:
-    - cd ..
-    - git clone git@gitlab.informatika.org:if3110-2019-02-k03-04/ws-transaksi.git .
-    - cd ws-transaksi
     - pm2 stop all
+    - cd ..
+    - rm -R ws-transaksi
+    - git clone git@gitlab.informatika.org:if3110-2019-02-k03-04/ws-transaksi.git
+    - cd ws-transaksi
     - pm2 start index.js
