@@ -19,12 +19,12 @@ lint:
   script:
     - npm run lint
 
-# Job 2:
-test:
-  stage: test
-  script:
-    - npm run test
-    # ToDo: Add coverage
+# # Job 2:
+# test:
+#   stage: test
+#   script:
+#     - npm run test
+#     # ToDo: Add coverage
 
 # deployToAWS:
 #   only:
