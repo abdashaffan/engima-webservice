@@ -30,7 +30,7 @@ lint:
 delete_folder:
   stage: delete
   script:
-    - sudo rm -f -R ws-transaksi
+    - rm -f -R ws-transaksi
   allow_failure: true
 
 deployAws:
