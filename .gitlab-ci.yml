@@ -1,0 +1,46 @@
+# Node docker image on which this would be run
+image: node:8.9.0
+
+#This command is run before actual stages start running
+before_script:
+  - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+  - npm install
+
+stages:
+  - test
+  - delete
+  - deploy
+
+# lint and test are two different jobs in the same stage.
+# This allows us to run these two in parallel and making build faster
+
+# Job 1:
+lint:
+  stage: test
+  script:
+    - npm run lint
+
+# # Job 2:
+# test:
+#   stage: test
+#   script:
+#     - npm run test
+#     # ToDo: Add coverage
+
+delete_folder:
+  stage: delete
+  script:
+    - rm -f -R ws-transaksi
+  allow_failure: true
+
+deployAws:
+  # only:
+  #   - master
+  #   - develop
+  stage: deploy
+  script:
+    - pwd
+    - git clone git@gitlab.informatika.org:if3110-2019-02-k03-04/ws-transaksi.git
+    - pwd
+    - pm2 kill
+    - pm2 start index.js
