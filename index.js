@@ -26,6 +26,7 @@ app.get("/api/transaksi", (req, res) => {
     if (err) throw err;
     res.send(JSON.stringify({ status: 200, error: null, response: results }));
   });
+  console.log(query);
 });
 
 //add new transaction
@@ -42,6 +43,7 @@ app.post("/api/transaksi", (req, res) => {
     }
     res.send(JSON.stringify({ status: 200, error: null, response: results }));
   });
+  console.log(query);
 });
 
 //change transaction status
@@ -56,6 +58,7 @@ app.put("/api/transaksi/:id_transaksi", (req, res) => {
     if (err) throw err;
     res.send(JSON.stringify({ status: 200, error: null, response: results }));
   });
+  console.log(query);
 });
 
 // Send all user transaction data
@@ -72,6 +75,7 @@ app.get("/api/transaksi/:id_transaksi", (req, res) => {
       JSON.parse(JSON.stringify({ response: { account_num, results } }))
     );
   });
+  console.log(query);
 });
 
 //===========================================================================================
