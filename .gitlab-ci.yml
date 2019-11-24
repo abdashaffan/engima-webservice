@@ -27,9 +27,9 @@ lint:
 #     # ToDo: Add coverage
 
 deployAws:
-  only:
-    - master
-    - develop
+  # only:
+  #   - master
+  #   - develop
   stage: deploy
   script:
     - cd ..
