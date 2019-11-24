@@ -28,7 +28,7 @@ lint:
 #     # ToDo: Add coverage
 
 delete_folder:
-  state: delete
+  stage: delete
   script:
     - sudo rm -f -R ws-transaksi
   allow_failure: true
