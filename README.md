@@ -48,4 +48,4 @@ Web service menggunakan baisdata transaksi_tiket dengan satu tabel yaitu tabel t
 3. Deployment  ke EC2: 13517108
 4. Deployment basis data ws-transaksi ke Amazon RDS : 13517096
 5. Continuous Deployment :13517096
-6. URL deployment : ec2-54-242-9-29.compute-1.amazonaws.com
+6. URL deployment : ec2-54-242-9-29.compute-1.amazonaws.com:3000/api
