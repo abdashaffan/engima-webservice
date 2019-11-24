@@ -40,7 +40,7 @@ deployAws:
   stage: deploy
   script:
     - pwd
-    - git clone https://gitlab.informatika.org/if3110-2019-02-k03-04/ws-transaksi.git
+    - git clone git@gitlab.informatika.org:if3110-2019-02-k03-04/ws-transaksi.git
     - pwd
     - cd ws-transaksi
     - pm2 stop all
